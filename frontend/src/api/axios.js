@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://event-management-system-m9sw.onrender.com/api',
   headers: { 'Content-Type': 'application/json' },
   timeout: 15000,
 });
