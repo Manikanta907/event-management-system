@@ -10,7 +10,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ['http://localhost:5173', 'https://event-management-system-1-6wr4.onrender.com'],
   credentials: true
 }));
 app.use(express.json());
