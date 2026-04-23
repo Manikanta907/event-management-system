@@ -30,8 +30,9 @@ export default function Login() {
 
   return (
     <div className="auth-page">
-      <div className="auth-bg-orb auth-bg-orb-1" />
-      <div className="auth-bg-orb auth-bg-orb-2" />
+      <div className="bg-orb bg-orb-1" />
+      <div className="bg-orb bg-orb-2" />
+      <div className="bg-orb bg-orb-3" />
 
       <div className="auth-card animate-fade-in">
         <div className="auth-logo">

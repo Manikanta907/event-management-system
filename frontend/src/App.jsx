@@ -31,6 +31,10 @@ function ProtectedLayout() {
 
   return (
     <div className="app-layout">
+      <div className="bg-orb bg-orb-1" />
+      <div className="bg-orb bg-orb-2" />
+      <div className="bg-orb bg-orb-3" />
+      
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <div className="main-content">
         <Navbar title={getTitle()} onMenuClick={() => setSidebarOpen(s => !s)} />

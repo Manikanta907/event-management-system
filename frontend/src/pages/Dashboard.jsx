@@ -16,9 +16,9 @@ import { format } from 'date-fns';
 
 const RSVP_COLORS = {
   going: '#10b981',
-  declined: '#ef4444',
+  declined: '#f43f5e',
   maybe: '#f59e0b',
-  pending: '#6b7280'
+  pending: '#94a3b8'
 };
 
 export default function Dashboard() {
@@ -48,7 +48,7 @@ export default function Dashboard() {
     { name: 'Pending', value: stats.guests.pending },
   ] : [];
 
-  const pieColors = ['#10b981', '#ef4444', '#f59e0b', '#6b7280'];
+  const pieColors = ['#10b981', '#f43f5e', '#f59e0b', '#94a3b8'];
 
   if (loading) {
     return (
@@ -186,8 +186,8 @@ export default function Dashboard() {
             </div>
             <ResponsiveContainer width="100%" height={180}>
               <BarChart data={[
-                { name: 'Total', value: stats?.events.total || 0, fill: '#7c3aed' },
-                { name: 'Upcoming', value: stats?.events.upcoming || 0, fill: '#06b6d4' },
+                { name: 'Total', value: stats?.events.total || 0, fill: '#8b5cf6' },
+                { name: 'Upcoming', value: stats?.events.upcoming || 0, fill: '#0ea5e9' },
                 { name: 'Completed', value: stats?.events.completed || 0, fill: '#10b981' },
               ]} margin={{ top: 5, right: 5, bottom: 5, left: -20 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
@@ -197,7 +197,7 @@ export default function Dashboard() {
                   contentStyle={{ background: 'var(--bg-elevated)', border: '1px solid var(--border)', borderRadius: '8px', color: 'var(--text-primary)' }}
                 />
                 <Bar dataKey="value" radius={[4, 4, 0, 0]}>
-                  {[{ fill: '#7c3aed' }, { fill: '#06b6d4' }, { fill: '#10b981' }].map((item, index) => (
+                  {[{ fill: '#8b5cf6' }, { fill: '#0ea5e9' }, { fill: '#10b981' }].map((item, index) => (
                     <Cell key={index} fill={item.fill} />
                   ))}
                 </Bar>

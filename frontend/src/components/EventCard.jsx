@@ -3,16 +3,16 @@ import { MdLocationOn, MdCalendarToday, MdPeople, MdMoreVert } from 'react-icons
 import { format } from 'date-fns';
 
 const categoryColors = {
-  conference: '#3b82f6', workshop: '#10b981', seminar: '#8b5cf6',
-  wedding: '#ec4899', birthday: '#f59e0b', corporate: '#6366f1',
-  concert: '#f97316', sports: '#06b6d4', other: '#94a3b8'
+  conference: '#0ea5e9', workshop: '#10b981', seminar: '#8b5cf6',
+  wedding: '#ec4899', birthday: '#f59e0b', corporate: '#6d28d9',
+  concert: '#f43f5e', sports: '#38bdf8', other: '#94a3b8'
 };
 
 const statusBanners = {
   published: 'var(--gradient-primary)',
   draft: 'linear-gradient(135deg, #475569, #64748b)',
   completed: 'linear-gradient(135deg, #3b82f6, #6366f1)',
-  cancelled: 'linear-gradient(135deg, #ef4444, #dc2626)',
+  cancelled: 'linear-gradient(135deg, #f43f5e, #dc2626)',
   ongoing: 'linear-gradient(135deg, #10b981, #059669)',
 };
 
@@ -22,9 +22,9 @@ export default function EventCard({ event, onEdit, onDelete }) {
 
   return (
     <div className="event-card" onClick={() => navigate(`/events/${event._id}`)}>
-      <div className="event-card-banner" style={{ background: statusBanners[event.status] || statusBanners.published }} />
+      <div className="event-card-banner" style={{ background: statusBanners[event.status] || statusBanners.published, boxShadow: '0 2px 10px rgba(0,0,0,0.3)' }} />
       <div className="event-card-body">
-        <div className="event-card-category" style={{ color: catColor }}>
+        <div className="event-card-category" style={{ color: catColor, textShadow: `0 0 10px ${catColor}40` }}>
           {event.category?.charAt(0).toUpperCase() + event.category?.slice(1)}
         </div>
         <h3 className="event-card-title">{event.title}</h3>
@@ -44,9 +44,9 @@ export default function EventCard({ event, onEdit, onDelete }) {
           </span>
         </div>
       </div>
-      <div className="event-card-footer">
+      <div className="event-card-footer" style={{ background: 'rgba(255, 255, 255, 0.4)', backdropFilter: 'blur(10px)' }}>
         <div className="guest-count">
-          <MdPeople size={15} />
+          <MdPeople size={15} style={{ color: 'var(--primary-light)' }} />
           {event.guestCount || 0} guests
         </div>
         <div style={{ display: 'flex', gap: '0.4rem' }} onClick={e => e.stopPropagation()}>

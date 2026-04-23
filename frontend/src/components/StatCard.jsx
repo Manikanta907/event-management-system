@@ -14,7 +14,9 @@ export default function StatCard({ label, value, icon, color, iconBg, change, ch
             </div>
           )}
         </div>
-        <div className="stat-icon">{icon}</div>
+        <div className="stat-icon" style={{ boxShadow: `0 0 25px ${iconBg}`, border: `1px solid ${iconBg}` }}>
+          {icon}
+        </div>
       </div>
     </div>
   );

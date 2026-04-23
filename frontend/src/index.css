@@ -6,16 +6,17 @@
 
 /* ── CSS Variables ─────────────────────────────────────────────── */
 :root {
-  /* Brand Colors */
-  --primary: #7c3aed;
-  --primary-light: #a855f7;
-  --primary-dark: #5b21b6;
-  --primary-glow: rgba(124, 58, 237, 0.3);
+  /* Brand Colors - Vibrant Light Modern */
+  --primary: #4f46e5;
+  --primary-light: #6366f1;
+  --primary-dark: #3730a3;
+  --primary-glow: rgba(79, 70, 229, 0.25);
 
-  --secondary: #06b6d4;
-  --secondary-light: #22d3ee;
-  --accent: #f59e0b;
-  --accent-light: #fbbf24;
+  --secondary: #ec4899;
+  --secondary-light: #f472b6;
+  --accent: #06b6d4;
+  --accent-light: #22d3ee;
+  
   --success: #10b981;
   --danger: #ef4444;
   --warning: #f59e0b;
@@ -25,52 +26,53 @@
   --rsvp-yes: #10b981;
   --rsvp-no: #ef4444;
   --rsvp-maybe: #f59e0b;
-  --rsvp-pending: #6b7280;
+  --rsvp-pending: #64748b;
 
-  /* Dark Theme Surfaces */
-  --bg-base: #080b14;
-  --bg-surface: #0f1526;
-  --bg-card: #141b2d;
-  --bg-elevated: #1a2236;
-  --bg-hover: #1f2a42;
-  --bg-input: #0d1525;
+  /* Light Theme Surfaces - Premium White Glassmorphism */
+  --bg-base: #f8fafc;
+  --bg-surface: rgba(255, 255, 255, 0.75);
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-elevated: #ffffff;
+  --bg-hover: rgba(241, 245, 249, 0.8);
+  --bg-input: rgba(255, 255, 255, 0.9);
 
   /* Borders */
-  --border: rgba(255, 255, 255, 0.07);
-  --border-active: rgba(124, 58, 237, 0.5);
-  --border-hover: rgba(255, 255, 255, 0.15);
+  --border: rgba(0, 0, 0, 0.08);
+  --border-active: rgba(79, 70, 229, 0.5);
+  --border-hover: rgba(0, 0, 0, 0.15);
 
-  /* Text */
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #475569;
-  --text-accent: #a855f7;
+  /* Text - Dark for readability on light backgrounds */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-accent: #4f46e5;
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #06b6d4 100%);
-  --gradient-card: linear-gradient(145deg, #1a2236 0%, #141b2d 100%);
-  --gradient-hero: linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(6,182,212,0.08) 100%);
+  --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%);
+  --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
+  --gradient-hero: linear-gradient(135deg, rgba(79,70,229,0.08) 0%, rgba(236,72,153,0.05) 100%);
 
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
-  --shadow-purple: 0 0 30px rgba(124, 58, 237, 0.2);
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+  /* Shadows - Dark soft shadows for light theme */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
+  --shadow-purple: 0 8px 24px rgba(79, 70, 229, 0.25);
+  --shadow-pink: 0 8px 24px rgba(236, 72, 153, 0.25);
+  --shadow-card: 0 8px 30px rgba(15, 23, 42, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 
   /* Blur */
-  --blur: blur(20px);
+  --blur: blur(24px);
 
   /* Transitions */
-  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: all 0.15s ease;
 
   /* Dimensions */
-  --sidebar-width: 260px;
-  --navbar-height: 68px;
-  --border-radius: 14px;
-  --border-radius-sm: 8px;
-  --border-radius-lg: 20px;
+  --sidebar-width: 280px;
+  --navbar-height: 72px;
+  --border-radius: 16px;
+  --border-radius-sm: 10px;
+  --border-radius-lg: 24px;
 }
 
 /* ── Reset & Base ──────────────────────────────────────────────── */
@@ -136,6 +138,14 @@ input, textarea, select {
 .app-layout {
   display: flex;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #f0fdf4;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(253,100%,94%,1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(318,100%,93%,1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(189,100%,90%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(239,100%,94%,1) 0px, transparent 50%);
 }
 
 .main-content {
@@ -143,8 +153,10 @@ input, textarea, select {
   margin-left: var(--sidebar-width);
   padding-top: var(--navbar-height);
   min-height: 100vh;
-  background: var(--bg-base);
+  background: transparent;
   transition: margin-left 0.3s ease;
+  position: relative;
+  z-index: 10;
 }
 
 .page-container {
@@ -169,6 +181,8 @@ input, textarea, select {
   width: var(--sidebar-width);
   height: 100vh;
   background: var(--bg-surface);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
   border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
@@ -201,12 +215,14 @@ input, textarea, select {
 
 .sidebar-logo-text {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 800;
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #0ea5e9 100%, #8b5cf6 200%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: shimmer 3s linear infinite;
 }
 
 .sidebar-nav {
@@ -344,7 +360,7 @@ input, textarea, select {
   left: var(--sidebar-width);
   right: 0;
   height: var(--navbar-height);
-  background: rgba(8, 11, 20, 0.85);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
   border-bottom: 1px solid var(--border);
@@ -489,6 +505,8 @@ input, textarea, select {
 /* ── Cards ─────────────────────────────────────────────────────── */
 .card {
   background: var(--bg-card);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
   padding: 1.5rem;
@@ -518,6 +536,8 @@ input, textarea, select {
 /* ── Stat Cards ────────────────────────────────────────────────── */
 .stat-card {
   background: var(--bg-card);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
   padding: 1.5rem;
@@ -999,38 +1019,69 @@ input[type="date"], input[type="datetime-local"] {
   .dashboard-grid { grid-template-columns: 1fr; }
 }
 
+/* ── Global Background Orbs ────────────────────────────────────── */
+.bg-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.bg-orb-1 {
+  width: 60vw;
+  height: 60vw;
+  max-width: 800px;
+  max-height: 800px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, transparent 70%);
+  top: -10%;
+  left: -10%;
+  animation: floatOrb 20s infinite alternate ease-in-out;
+}
+
+.bg-orb-2 {
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, transparent 70%);
+  bottom: -10%;
+  right: -5%;
+  animation: floatOrb 25s infinite alternate-reverse ease-in-out;
+}
+
+.bg-orb-3 {
+  width: 40vw;
+  height: 40vw;
+  max-width: 500px;
+  max-height: 500px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+  top: 40%;
+  left: 40%;
+  animation: floatOrb 30s infinite alternate ease-in-out;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(3vw, 5vh) scale(1.1); }
+  100% { transform: translate(-3vw, -2vh) scale(0.9); }
+}
+
 /* ── Auth Pages ────────────────────────────────────────────────── */
 .auth-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-base);
+  background-color: #f0fdf4;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(253,100%,94%,1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(318,100%,93%,1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(189,100%,90%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(239,100%,94%,1) 0px, transparent 50%);
   position: relative;
   overflow: hidden;
-}
-
-.auth-bg-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
-}
-
-.auth-bg-orb-1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(124,58,237,0.2) 0%, transparent 70%);
-  top: -150px;
-  left: -150px;
-}
-
-.auth-bg-orb-2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%);
-  bottom: -100px;
-  right: -100px;
 }
 
 .auth-card {

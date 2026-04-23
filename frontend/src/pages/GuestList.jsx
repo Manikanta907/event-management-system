@@ -67,11 +67,11 @@ export default function GuestList() {
       {/* Quick stats */}
       <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
         {[
-          { key: 'all', label: 'Total', value: totalStats.total, color: '#7c3aed' },
+          { key: 'all', label: 'Total', value: totalStats.total, color: '#8b5cf6' },
           { key: 'yes', label: 'Going', value: totalStats.yes, color: '#10b981' },
-          { key: 'no', label: 'Declined', value: totalStats.no, color: '#ef4444' },
+          { key: 'no', label: 'Declined', value: totalStats.no, color: '#f43f5e' },
           { key: 'maybe', label: 'Maybe', value: totalStats.maybe, color: '#f59e0b' },
-          { key: 'pending', label: 'Pending', value: totalStats.pending, color: '#6b7280' },
+          { key: 'pending', label: 'Pending', value: totalStats.pending, color: '#94a3b8' },
         ].map(s => (
           <div
             key={s.key}
